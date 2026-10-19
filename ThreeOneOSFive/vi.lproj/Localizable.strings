@@ -32,7 +32,7 @@
 "onboarding.language_subtitle" = "Bạn có thể đổi lại trong Cài đặt.";
 "onboarding.language_hint" = "Đã chọn: %@";
 "onboarding.welcome_title" = "Chào mừng đến với 3105";
-"onboarding.welcome_message" = "Ứng dụng được phát triển bởi YangJiii";
+"onboarding.welcome_message" = "Được Rkn (@RknDev1) duy trì — fork của 3105";
 "onboarding.welcome_badge" = "Định danh chính thức 3105";
 "onboarding.versions_title" = "Phiên bản iOS được hỗ trợ";
 "onboarding.versions_subtitle" = "3105 đã được xác minh trên các khoảng bên dưới. Build ngoài phạm vi sẽ bị chặn.";
@@ -279,9 +279,9 @@
 "settings.token_footer" = "Khả dụng sau khi exploit cấp quyền thành công.";
 "settings.credits" = "Ghi công";
 "settings.social_media" = "Mạng Xã Hội";
-"social.github_role" = "Mã nguồn 3105";
+"social.github_role" = "Mã nguồn fork của Rkn";
 "social.iosvn_role" = "Cộng Đồng IOSVN";
-"credit.yangjiii" = "Nhà phát triển & thiết kế";
+"credit.yangjiii" = "Tác giả & nhà thiết kế 3105 gốc";
 "credit.forcequit" = "Khai thác bad_query";
 "credit.filzaslop" = "FilzaSlop — MHA-C2 và dò dữ liệu ứng dụng";
 "credit.pocket_poster" = "Pocket Poster, Nugget và định dạng .tendies";

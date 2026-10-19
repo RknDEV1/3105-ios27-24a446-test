@@ -99,7 +99,7 @@ Do not publish logs, app containers, cookies, account databases, or patch payloa
 
 ## Credits
 
-3105 is developed and designed by [YangJiii](https://x.com/duongduong0908).
+This fork is maintained by **Rkn** ([@RknDev1](https://github.com/RknDev1)) and contains experimental iOS 27.0.1 build `24A446` changes. The original 3105 project was developed and designed by [YangJiii](https://x.com/duongduong0908).
 
 Special thanks to [0xjohnny](https://x.com/0xjohnny) for [FilzaSlop](https://github.com/0xjohnnydev/FilzaSlop) and related research:
 
@@ -108,7 +108,7 @@ Special thanks to [0xjohnny](https://x.com/0xjohnny) for [FilzaSlop](https://git
 - [InstallCoordination-PoC](https://github.com/0xjohnnydev/InstallCoordination-PoC) — persisted-state and final-symlink chain
 - [CFPrefsZeroFile-PoC](https://github.com/0xjohnnydev/CFPrefsZeroFile-PoC) — `cfprefsd` zero-file creation
 
-The project also builds on work from Pocket Poster/Nugget, CrazyMind90, forcequitOS, Dopamine, and their contributors. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for full attribution and upstream links.
+The project also builds on work from Pocket Poster/Nugget, CrazyMind90, forcequitOS, Dopamine, and their contributors. See [CREDITS.md](CREDITS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for fork-maintainer credits, full attribution, and upstream links.
 
 ## License
 

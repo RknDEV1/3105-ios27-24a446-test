@@ -32,7 +32,7 @@
 "onboarding.language_subtitle" = "You can change this later in Settings.";
 "onboarding.language_hint" = "Selected: %@";
 "onboarding.welcome_title" = "Welcome to 3105";
-"onboarding.welcome_message" = "Developed by YangJiii";
+"onboarding.welcome_message" = "Maintained by Rkn (@RknDev1) — fork of 3105";
 "onboarding.welcome_badge" = "Official 3105 identity";
 "onboarding.versions_title" = "Supported iOS versions";
 "onboarding.versions_subtitle" = "3105 is verified on the ranges below. Unsupported builds are blocked.";
@@ -279,9 +279,9 @@
 "settings.token_footer" = "Available after exploit access succeeds.";
 "settings.credits" = "Credits";
 "settings.social_media" = "Social media";
-"social.github_role" = "3105 source code";
+"social.github_role" = "Rkn fork source code";
 "social.iosvn_role" = "iOSVN Community";
-"credit.yangjiii" = "Developer & designer";
+"credit.yangjiii" = "Original 3105 author & designer";
 "credit.forcequit" = "bad_query exploit";
 "credit.filzaslop" = "FilzaSlop — MHA-C2 and app discovery";
 "credit.pocket_poster" = "Pocket Poster, Nugget & .tendies format";
