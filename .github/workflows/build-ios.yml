@@ -21,8 +21,12 @@ jobs:
 
       - name: Show toolchain
         run: |
+          set -x
+          xcode-select -p
           xcodebuild -version
           xcodebuild -showsdks
+          xcrun --sdk iphoneos --show-sdk-version
+          xcodebuild -project ThreeOneOSFive.xcodeproj -scheme ThreeOneOSFive -showBuildSettings
 
       - name: Build unsigned archive
         run: |
@@ -36,7 +40,7 @@ jobs:
             -archivePath "$RUNNER_TEMP/ThreeOneOSFive.xcarchive" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
-            archive | tee "$RUNNER_TEMP/xcodebuild.log"
+            archive 2>&1 | tee "$RUNNER_TEMP/xcodebuild.log"
 
       - name: Package unsigned IPA artifact
         run: |
@@ -61,6 +65,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: xcodebuild-log
-          path: ${{ runner.temp }}/xcodebuild.log
+          path: |
+            ${{ runner.temp }}/xcodebuild.log
+            ${{ runner.temp }}/xcodebuild.log
           if-no-files-found: ignore
           retention-days: 14
