@@ -33,7 +33,7 @@ jobs:
           set -o pipefail
           xcodebuild \
             -project ThreeOneOSFive.xcodeproj \
-            -target 3105 \
+            -scheme 3105 \
             -configuration Release \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
