@@ -26,14 +26,14 @@ jobs:
           xcodebuild -version
           xcodebuild -showsdks
           xcrun --sdk iphoneos --show-sdk-version
-          xcodebuild -project ThreeOneOSFive.xcodeproj -scheme ThreeOneOSFive -showBuildSettings
+          xcodebuild -project ThreeOneOSFive.xcodeproj -target 3105 -showBuildSettings
 
       - name: Build unsigned archive
         run: |
           set -o pipefail
           xcodebuild \
             -project ThreeOneOSFive.xcodeproj \
-            -scheme ThreeOneOSFive \
+            -target 3105 \
             -configuration Release \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
