@@ -45,7 +45,9 @@ jobs:
       - name: Package unsigned IPA artifact
         run: |
           set -euo pipefail
-          APP="$RUNNER_TEMP/ThreeOneOSFive.xcarchive/Products/Applications/ThreeOneOSFive.app"
+          APP_DIR="$RUNNER_TEMP/ThreeOneOSFive.xcarchive/Products/Applications"
+          APP="$(find "$APP_DIR" -maxdepth 1 -type d -name '*.app' -print -quit)"
+          echo "Packaging app: $APP"
           test -d "$APP"
           mkdir -p "$RUNNER_TEMP/Payload"
           cp -R "$APP" "$RUNNER_TEMP/Payload/"
