@@ -1,6 +1,16 @@
 import Foundation
 
 enum DevicePatchService {
+    static func unavailableBundleIdentifiers(in project: PatchProject) -> [String] {
+        project.allBundleIdentifiers.filter { bundleID in
+            guard !bundleID.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+                  let path = ContainerStore.resolveAppContainerPath(bundleID: bundleID) else {
+                return true
+            }
+            return !ContainerStore.isApplicationContainerPath(path)
+        }
+    }
+
     static func apply(project: PatchProject) throws -> PatchTransactionReceipt {
         let bundleIDs = orderedBundleIdentifiers(in: project)
         return try withResolvedContainers(bundleIDs: bundleIDs) { roots in

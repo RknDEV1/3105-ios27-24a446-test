@@ -986,6 +986,15 @@ private struct PatchProjectDetailView: View {
 
     private func apply() {
         guard let item, let baseProject = item.project else { return }
+        let missingBundleIDs = DevicePatchService.unavailableBundleIdentifiers(in: baseProject)
+        guard missingBundleIDs.isEmpty else {
+            actionAlert = PatchStoreAlert(
+                titleKey: "common.failed",
+                messageKey: "patch.error.app_unavailable",
+                messageArgument: missingBundleIDs.joined(separator: ", ")
+            )
+            return
+        }
         isWorking = true
         Task.detached(priority: .userInitiated) {
             do {

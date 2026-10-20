@@ -230,7 +230,7 @@
 "patch.error.private_operation" = "The private patch operation failed. Protected bundle and path details were hidden.";
 "patch.error.replacement_required" = "Choose a replacement file for every target path before saving.";
 "patch.error.keychain" = "The remembered unlock key could not be saved or read securely.";
-"patch.error.app_unavailable" = "The app bundle %@ is not installed or cannot be opened. No patch files were changed.";
+"patch.error.app_unavailable" = "The target app (%@) is not installed or cannot be opened. Install the app first and make sure the patch uses its exact bundle identifier. No files were changed.";
 "patch.error.target_occupied" = "The target %@ is already patched by another project. Restore that patch before applying this one.";
 "patch.error.already_applied" = "This patch is already active. Reset it or restore the originals before applying it again.";
 "patch.error.restore_targets_changed" = "These files changed after apply and require confirmation before restoration:\n%@";
