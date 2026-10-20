@@ -41,11 +41,19 @@ struct MatchesView: View {
 
                 Section(language.text("matches.imported")) {
                     if store.items.isEmpty {
-                        ContentUnavailableView(
-                            language.text("matches.empty_title"),
-                            systemImage: "shippingbox",
-                            description: Text(language.text("matches.empty_message"))
-                        )
+                        VStack(spacing: 8) {
+                            Image(systemName: "shippingbox")
+                                .font(.system(size: 28))
+                                .foregroundStyle(.secondary)
+                            Text(language.text("matches.empty_title"))
+                                .font(.headline)
+                            Text(language.text("matches.empty_message"))
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 22)
                     } else {
                         ForEach(store.items) { item in
                             HStack(spacing: 12) {
