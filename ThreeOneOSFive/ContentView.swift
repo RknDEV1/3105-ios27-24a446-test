@@ -42,31 +42,8 @@ struct ContentView: View {
     }
 
     var body: some View {
-        Group {
-            if horizontalSizeClass == .regular {
-                regularLayout
-            } else {
-                compactLayout
-            }
-        }
-        .tint(AppTheme.accent)
-        .imageScale(.small)
-        .onChange(of: patchDraftCoordinator.request?.id) { requestID in
-            if requestID != nil { tabNavigation.select(AppSection.installed.rawValue) }
-        }
-        .onChange(of: patchDraftCoordinator.importRequest?.id) { requestID in
-            if requestID != nil { tabNavigation.select(AppSection.installed.rawValue) }
-        }
-        .onChange(of: developerModeEnabled) { _ in
-            tabNavigation.reconcileSelection(with: featureVisibility)
-        }
-        .onAppear {
-            tabNavigation.reconcileSelection(with: featureVisibility)
-        }
-        .sheet(isPresented: $showSettings) { SettingsView() }
-        .sheet(isPresented: $showLogs) { LogView() }
-        .patchStorePresentation(patchStore)
-        .repositoryStorePresentation(repositoryStore, patchStore: patchStore)
+        DopeStyleView()
+            .patchStorePresentation(patchStore)
     }
 
     private var compactLayout: some View {
