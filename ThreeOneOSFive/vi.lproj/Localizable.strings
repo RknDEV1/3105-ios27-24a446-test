@@ -80,6 +80,13 @@
 "tab.new" = "Mới";
 "tab.files" = "Tệp";
 "tab.patches" = "Patch";
+
+"tab.matches" = "Trận đấu";
+"matches.add_patch" = "Thêm patch 3105";
+"matches.imported" = "Patch khả dụng";
+"matches.empty_title" = "Chưa có patch";
+"matches.empty_message" = "Thêm gói .3105 để sử dụng với ứng dụng và dữ liệu thuộc về bạn.";
+"matches.footer" = "Chỉ sử dụng patch với ứng dụng và dữ liệu của bạn. Màn hình này không chèn mã hoặc sửa bộ nhớ trò chơi đang chạy.";
 "tab.cleaner" = "Dọn dẹp";
 
 "cleaner.title" = "Dọn dẹp";

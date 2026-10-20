@@ -80,6 +80,13 @@
 "tab.new" = "最新";
 "tab.files" = "文件";
 "tab.patches" = "补丁";
+
+"tab.matches" = "对局";
+"matches.add_patch" = "添加 3105 补丁";
+"matches.imported" = "可用补丁";
+"matches.empty_title" = "尚未添加补丁";
+"matches.empty_message" = "添加 .3105 软件包，用于你拥有的应用和数据。";
+"matches.footer" = "仅将补丁用于你拥有的应用和数据。此页面不会注入代码或修改运行中的游戏内存。";
 "tab.cleaner" = "清理";
 
 "cleaner.title" = "清理";

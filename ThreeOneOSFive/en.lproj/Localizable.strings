@@ -80,6 +80,13 @@
 "tab.new" = "New";
 "tab.files" = "Files";
 "tab.patches" = "Patches";
+
+"tab.matches" = "Matches";
+"matches.add_patch" = "Add 3105 patch";
+"matches.imported" = "Available patches";
+"matches.empty_title" = "No patches added";
+"matches.empty_message" = "Add a .3105 package to use it with apps and data you own.";
+"matches.footer" = "Only use patches with apps and data you own. This screen does not inject code or modify live game memory.";
 "tab.cleaner" = "Cleaner";
 
 "cleaner.title" = "Cleaner";

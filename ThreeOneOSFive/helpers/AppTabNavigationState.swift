@@ -7,6 +7,7 @@ enum AppSection: Int, CaseIterable, Identifiable {
     case installed
     case files
     case search
+    case matches
 
     var id: Int { rawValue }
 }
