@@ -13,6 +13,13 @@ enum DevicePatchService {
 
     static func apply(project: PatchProject) throws -> PatchTransactionReceipt {
         let bundleIDs = orderedBundleIdentifiers(in: project)
+        guard !bundleIDs.isEmpty,
+              bundleIDs.allSatisfy({
+                  !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                      && (try? PatchPathValidator.canonicalBundleIdentifier($0)) == $0
+              }) else {
+            throw PatchPackageError.invalidBundleIdentifier
+        }
         return try withResolvedContainers(bundleIDs: bundleIDs) { roots in
             try PatchTransaction.apply(
                 project: project,

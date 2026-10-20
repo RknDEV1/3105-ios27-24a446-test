@@ -986,6 +986,17 @@ private struct PatchProjectDetailView: View {
 
     private func apply() {
         guard let item, let baseProject = item.project else { return }
+        let hasInvalidBundleID = baseProject.allBundleIdentifiers.contains {
+            $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                || (try? PatchPathValidator.canonicalBundleIdentifier($0)) != $0
+        }
+        guard !hasInvalidBundleID else {
+            actionAlert = PatchStoreAlert(
+                titleKey: "common.failed",
+                messageKey: "patch.error.invalid_bundle"
+            )
+            return
+        }
         let missingBundleIDs = DevicePatchService.unavailableBundleIdentifiers(in: baseProject)
         guard missingBundleIDs.isEmpty else {
             actionAlert = PatchStoreAlert(
