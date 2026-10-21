@@ -394,9 +394,8 @@ struct AppDataBrowserView: View {
                        mcmID.contains("com.dts.freefireth") {
                         
                         let manualApp = InstalledApp(
-                            id: UUID(),
                             bundleID: mcmID,
-                            displayName: "Free Fire",
+                            name: "Free Fire",
                             containerPath: folder.path,
                             version: "1.0",
                             icon: nil
