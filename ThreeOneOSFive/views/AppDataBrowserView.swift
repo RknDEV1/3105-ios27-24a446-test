@@ -381,6 +381,36 @@ struct AppDataBrowserView: View {
                 $0.displayName.localizedCaseInsensitiveCompare($1.displayName) == .orderedAscending
             }
 
+            // --- INÍCIO DO HACK MANUAL PARA iOS 27 ---
+            let fm = FileManager.default
+            let dataDir = URL(fileURLWithPath: "/var/mobile/Containers/Data/Application")
+            
+            if let folders = try? fm.contentsOfDirectory(at: dataDir, includingPropertiesForKeys: nil) {
+                for folder in folders {
+                    let metaPlist = folder.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist")
+                    
+                    if let dict = NSDictionary(contentsOf: metaPlist),
+                       let mcmID = dict["MCMMetadataIdentifier"] as? String,
+                       mcmID.contains("com.dts.freefireth") {
+                        
+                        let manualApp = InstalledApp(
+                            id: UUID(),
+                            bundleID: mcmID,
+                            displayName: "Free Fire",
+                            containerPath: folder.path,
+                            version: "1.0",
+                            icon: nil
+                        )
+                        
+                        if !result.contains(where: { $0.bundleID == mcmID }) {
+                            result.append(manualApp)
+                            log("browser: Hack manual ativado! Free Fire encontrado em: \(folder.path)")
+                        }
+                    }
+                }
+            }
+            // --- FIM DO HACK MANUAL ---
+
             DispatchQueue.main.async {
                 apps = result
                 isLoading = false
